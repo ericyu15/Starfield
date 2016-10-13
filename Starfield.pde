@@ -2,6 +2,7 @@
 void setup()
 {
 	//your code here
+	size(300,300);
 }
 void draw()
 {
@@ -10,8 +11,13 @@ void draw()
 class NormalParticle
 {
 	//your code here
-	double myX, myY, myColor, myAngle, mySpeed
-	NormalParticle(){}
+	double dX, dY, dColor, dTheta, dSpeed;
+	NormalParticle()
+	{
+		dX = x;
+		dY = y;
+		dColor = 0;
+	}
 	void move(){}
 	void show(){}
 }

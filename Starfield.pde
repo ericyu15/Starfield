@@ -1,12 +1,24 @@
 //your code here
+NormalParticle[] stars;
 void setup()
 {
 	//your code here
 	size(300,300);
+	background(0);
+	stars = new NormalParticle[100];
+	for(int i = 0; i < stars.length; i ++)
+	{
+		stars[i] = new NormalParticle();
+	}
 }
 void draw()
 {
 	//your code here
+	for(int i = 0; i < stars.length; i ++)
+	{
+		stars[i].move();
+		stars[i].show();
+	}
 }
 class NormalParticle
 {
@@ -14,12 +26,21 @@ class NormalParticle
 	double dX, dY, dColor, dTheta, dSpeed;
 	NormalParticle()
 	{
-		dX = x;
-		dY = y;
-		dColor = 0;
+		dX = 150;
+		dY = 150;
+		dColor = 255;
+		dTheta = Math.random()*2*Math.PI; 
+		dSpeed = (Math.random()*9 + 1);
 	}
-	void move(){}
-	void show(){}
+	void move()
+	{
+		dX = dX + Math.cos(dTheta);
+		dY = dY + Math.sin(dTheta);
+	}
+	void show()
+	{
+		ellipse((float)dX, (float)dY, 5, 5);
+	}
 }
 interface Particle
 {

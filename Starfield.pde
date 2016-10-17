@@ -5,7 +5,7 @@ void setup()
 	//your code here
 	size(300,300);
 	background(0);
-	stars = new NormalParticle[100];
+	stars = new NormalParticle[1000];
 	for(int i = 0; i < stars.length; i ++)
 	{
 		stars[i] = new NormalParticle();
@@ -18,6 +18,13 @@ void draw()
 	{
 		stars[i].move();
 		stars[i].show();
+	}
+}
+void mousePressed()
+{
+	for(int i = 0; i < stars.length; i ++)
+	{
+		stars[i] = new NormalParticle();
 	}
 }
 class NormalParticle
@@ -34,8 +41,8 @@ class NormalParticle
 	}
 	void move()
 	{
-		dX = dX + Math.cos(dTheta);
-		dY = dY + Math.sin(dTheta);
+		dX = dX + Math.cos(dTheta)*dSpeed;
+		dY = dY + Math.sin(dTheta)*dSpeed;
 	}
 	void show()
 	{

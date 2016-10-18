@@ -3,7 +3,8 @@ NormalParticle[] stars;
 void setup()
 {
 	//your code here
-	size(300,300);
+	strokeWeight(1);
+	size(500,500);
 	background(0);
 	stars = new NormalParticle[1000];
 	for(int i = 0; i < stars.length; i ++)
@@ -33,8 +34,8 @@ class NormalParticle
 	double dX, dY, dColor, dTheta, dSpeed;
 	NormalParticle()
 	{
-		dX = 150;
-		dY = 150;
+		dX = 250;
+		dY = 250;
 		dColor = 255;
 		dTheta = Math.random()*2*Math.PI; 
 		dSpeed = (Math.random()*9 + 1);
@@ -56,6 +57,9 @@ interface Particle
 class OddballParticle //uses an interface
 {
 	//your code here
+	OddballParticle()
+	void move()
+	void show()
 }
 class JumboParticle //uses inheritance
 {
